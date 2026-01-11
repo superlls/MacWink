@@ -1,0 +1,18 @@
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+*.exe
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Go
+vendor/

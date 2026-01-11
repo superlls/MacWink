@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	targetIP := flag.String("ip", "", "Target Windows IP address (Required)")
+	targetIP := flag.String("ip", "192.168.1.8", "Target Windows IP address (Required)")
 	targetPort := flag.String("port", "9999", "Target Windows Port")
 	flag.Parse()
 
@@ -48,12 +48,12 @@ func main() {
 
 		if content != "" && content != lastContent {
 			log.Printf("Clipboard changed. Length: %d. Sending...", len(content))
-			
+
 			if err := sendData(targetAddr, content); err != nil {
 				log.Printf("Failed to sync: %v", err)
-				// Note: We do NOT update lastContent if send fails, 
+				// Note: We do NOT update lastContent if send fails,
 				// so we retry on next tick (because content != lastContent still holds).
-				// However, if the error persists, we spam logs. 
+				// However, if the error persists, we spam logs.
 				// To avoid log spam, we could update lastContent, or use a backoff.
 				// For this simple tool, not updating means we retry, which is "robust" but noisy.
 				// Let's update lastContent to prevent infinite retry loops on network down,
@@ -80,7 +80,7 @@ func sendData(address, content string) error {
 	// Prepare data
 	data := []byte(content)
 	length := uint32(len(data))
-	
+
 	// Protocol: 4 bytes length (BigEndian) + Content
 	header := make([]byte, 4)
 	binary.BigEndian.PutUint32(header, length)

@@ -43,16 +43,12 @@ go run main.go -peer 192.168.1.101
 go run main.go -port 8888 -peer 192.168.1.100:8888
 ```
 ## ⚡️生产力Combo
-<a href="https://github.com/superlls/CodeWhisper">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=superlls&repo=CodeWhisper&theme=transparent" />
-</a>
-**🎙️ CodeWhisper + 🚀 MacWink**
 
-生产力组合：
+> ### [🎙️ CodeWhisper](https://github.com/superlls/CodeWhisper) + [🚀 MacWink](https://github.com/your-username/MacWink)
 1.  使用 **CodeWhisper** 将你的语音灵感实时转写为文字，自动存入剪贴板。
 2.  **MacWink** 立即接力，将这段文字无缝同步到你桌面的另一台电脑上。
 
-👉 **场景**：对着 Mac 说话，文字直接出现在 Windows上 **Talk here, Paste there.**
+👉 **场景**：对着 Mac 说话，文字直接出现在 Windows上 
 
 ## 📜 License
 
